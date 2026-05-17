@@ -36,9 +36,9 @@ export default function Contact() {
     {
       icon: Mail,
       label: "Email Us",
-      value: "hometutionsiq@gmail.com",
+      value: "hometuitionsiq@gmail.com",
       sub: "24/7 Support",
-      href: "mailto:hometutionsiq@gmail.com"
+      href: "mailto:hometuitionsiq@gmail.com"
     }
   ];
 
@@ -98,7 +98,7 @@ export default function Contact() {
               <div className="flex items-start space-x-4">
                 <MapPin className="text-primary w-6 h-6 flex-shrink-0 mt-1" />
                 <p className="text-muted leading-relaxed">
-                  IQ Hometutions, Kidwai Nagar <br />
+                  IQ Hometuitions, Kidwai Nagar <br />
                   Kanpur, Uttar Pradesh 208011,<br />
                   India
                 </p>

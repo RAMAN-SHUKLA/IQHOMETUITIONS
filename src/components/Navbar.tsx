@@ -31,10 +31,10 @@ export default function Navbar() {
         <div className="bg-white rounded-full py-3 px-8 flex justify-between items-center shadow-xl shadow-black/20 border border-white/10">
           <Link href="/" className="flex items-center space-x-2">
             <div className="relative w-12 h-12">
-              <img src="/logo-512.png" alt="IQ Hometutions Logo" className="w-full h-full object-contain" />
+              <img src="/logo-512.png" alt="IQ Hometuitions Logo" className="w-full h-full object-contain" />
             </div>
             <span className="text-lg font-bold tracking-tight text-[#171717]">
-              IQHometutions
+              IQHometuitions
             </span>
           </Link>
 

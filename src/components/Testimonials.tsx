@@ -19,7 +19,7 @@ const testimonials = [
   {
     name: "Mohd. Ali Azhar",
     handle: "@ali_azhar",
-    content: "IQ Hometutions is a lifesaver. No more wandering around for verified tutors. Highly recommended!",
+    content: "IQ Hometuitions is a lifesaver. No more wandering around for verified tutors. Highly recommended!",
     verified: false,
   },
   {
@@ -43,7 +43,7 @@ const testimonials = [
   {
     name: "Shashi Goel",
     handle: "@shashi_g",
-    content: "Very satisfied with the tutors provided by IQ Hometutions. They are professional and knowledgeable.",
+    content: "Very satisfied with the tutors provided by IQ Hometuitions. They are professional and knowledgeable.",
     verified: true,
   }
 ];
@@ -54,7 +54,7 @@ export default function Testimonials() {
       <div className="container mx-auto max-w-6xl mb-16">
         <div className="text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Loved by <span className="text-primary italic">thousands of parents</span></h2>
-          <p className="text-muted">Here's what our users have to say about IQ Hometutions.</p>
+          <p className="text-muted">Here's what our users have to say about IQ Hometuitions.</p>
         </div>
       </div>
 

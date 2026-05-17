@@ -6,7 +6,7 @@ import Image from "next/image";
 import { ArrowRight, Calendar, Tag } from "lucide-react";
 
 export const metadata = {
-  title: "Education Blog | IQ Hometutions Kanpur",
+  title: "Education Blog | IQ Hometuitions Kanpur",
   description: "Latest tips, guides and news about home tuition and education in Kanpur.",
 };
 

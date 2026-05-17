@@ -13,10 +13,10 @@ export default function Footer() {
           <div className="space-y-6">
             <Link href="/" className="flex items-center space-x-2">
               <div className="relative w-14 h-14">
-                <img src="/logo-512.png" alt="IQ Hometutions Logo" className="w-full h-full object-contain" />
+                <img src="/logo-512.png" alt="IQ Hometuitions Logo" className="w-full h-full object-contain" />
               </div>
               <span className="text-xl font-bold tracking-tight text-white">
-                IQHometutions
+                IQHometuitions
               </span>
             </Link>
             <p className="text-muted text-sm leading-relaxed">
@@ -77,7 +77,7 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
                   <Mail className="w-4 h-4" />
                 </div>
-                <span>hometutionsiq@gmail.com</span>
+                <span>hometuitionsiq@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3 text-sm text-muted">
                 <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
@@ -91,7 +91,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-xs text-muted">
-            © {new Date().getFullYear()} IQ Hometutions. All rights reserved.
+            Â© {new Date().getFullYear()} IQ Hometuitions. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <Link href="/privacy-policy" className="text-xs text-muted hover:text-white transition-colors">Privacy Policy</Link>

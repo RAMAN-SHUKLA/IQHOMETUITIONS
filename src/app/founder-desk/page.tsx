@@ -55,7 +55,7 @@ export default function FounderDesk() {
             transition={{ delay: 0.2 }}
             className="text-muted max-w-3xl mx-auto text-lg leading-relaxed"
           >
-            We started IQ Hometutions with one single goal: to revolutionize the home tuition landscape
+            We started IQ Hometuitions with one single goal: to revolutionize the home tuition landscape
             in Kanpur through trust, technology, and highly qualified verified home tutors.
           </motion.p>
         </div>
@@ -122,7 +122,7 @@ export default function FounderDesk() {
                 Growing up and pursuing my higher education, I witnessed the academic system's gaps first-hand. In traditional large classroom setups, many talented students fall behind simply because their unique pacing, doubts, and learning styles are overlooked.
               </p>
               <p>
-                This inspired me to start <strong className="text-white font-semibold">IQ Hometutions</strong>, with the primary mission of providing premier, verified <strong className="text-white font-semibold">home tutors in Kanpur</strong>. We believe that every student, whether preparing for school boards or challenging national competitive exams, deserves one-on-one attention from a mentor who understands them.
+                This inspired me to start <strong className="text-white font-semibold">IQ Hometuitions</strong>, with the primary mission of providing premier, verified <strong className="text-white font-semibold">home tutors in Kanpur</strong>. We believe that every student, whether preparing for school boards or challenging national competitive exams, deserves one-on-one attention from a mentor who understands them.
               </p>
               <p>
                 Whether you need a <strong className="text-white font-semibold">home tutor for Class 10 CBSE/ICSE</strong>, a <strong className="text-white font-semibold">Class 12 board specialist</strong>, or advanced tutors for competitive exams like <strong className="text-white font-semibold">IIT-JAM, JEE, NEET</strong>, and <strong className="text-white font-semibold">JEST</strong>, we source the highly qualified and personally verified educators in Kanpur.

@@ -1,8 +1,8 @@
-# IQ Hometutions - Personalized Home Education Platform
+# IQ Hometuitions - Personalized Home Education Platform
 
-![IQ Hometutions Hero](docs/hero.png)
+![IQ Hometuitions Hero](docs/hero.png)
 
-IQ Hometutions is a premium, verified home tuition service based in Kanpur, India. We connect talented students with highly qualified, hand-picked educators tailored to their unique academic needs. Whether preparing for foundational school boards or advanced competitive exams, our mission is to empower minds across the city through personalized mentorship.
+IQ Hometuitions is a premium, verified home tuition service based in Kanpur, India. We connect talented students with highly qualified, hand-picked educators tailored to their unique academic needs. Whether preparing for foundational school boards or advanced competitive exams, our mission is to empower minds across the city through personalized mentorship.
 
 ## Features
 
@@ -22,7 +22,7 @@ IQ Hometutions is a premium, verified home tuition service based in Kanpur, Indi
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/RAMAN-SHUKLA/IQHOMETUTIONS.git
+   git clone https://github.com/RAMAN-SHUKLA/IQHOMETUITIONS.git
    ```
 
 2. **Install dependencies:**
@@ -46,6 +46,6 @@ IQ Hometutions is a premium, verified home tuition service based in Kanpur, Indi
 ## Contact & Office Details
 
 **Office:** Kidwai Nagar, Kanpur, Uttar Pradesh 208011, India  
-**Email:** [hometutionsiq@gmail.com](mailto:hometutionsiq@gmail.com)  
+**Email:** [hometuitionsiq@gmail.com](mailto:hometuitionsiq@gmail.com)  
 
-![IQ Hometutions Footer](docs/footer.png)
+![IQ Hometuitions Footer](docs/footer.png)

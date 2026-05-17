@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props) {
   const { data: frontmatter } = matter(fileContent);
 
   return {
-    title: `${frontmatter.title} | IQ Hometutions`,
+    title: `${frontmatter.title} | IQ Hometuitions`,
     description: frontmatter.description || frontmatter.excerpt,
   };
 }

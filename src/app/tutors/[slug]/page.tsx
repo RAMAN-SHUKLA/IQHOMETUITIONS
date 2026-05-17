@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!subject) return {};
 
   return {
-    title: `Home ${subject.name} Tutors in Kanpur | Expert Teachers | IQ Hometutions`,
+    title: `Home ${subject.name} Tutors in Kanpur | Expert Teachers | IQ Hometuitions`,
     description: `Expert home ${subject.name} tutors in Kanpur for CBSE, UP Board, and ICSE. Personalized 1-on-1 coaching for ${subject.classes.join(", ")}.`,
   };
 }

@@ -39,7 +39,7 @@ export default function About() {
             transition={{ delay: 0.2 }}
             className="text-muted text-lg leading-relaxed"
           >
-            IQ Hometutions was founded with a single mission: to provide every student in Kanpur with 
+            IQ Hometuitions was founded with a single mission: to provide every student in Kanpur with 
             personalized, high-quality education right at their doorstep. We believe that every 
             child has a unique learning style and deserves a mentor who understands their pace.
           </motion.p>
@@ -73,7 +73,7 @@ export default function About() {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <h2 className="text-4xl font-bold text-white">Why We Started <br /><span className="text-primary">IQ Hometutions?</span></h2>
+            <h2 className="text-4xl font-bold text-white">Why We Started <br /><span className="text-primary">IQ Hometuitions?</span></h2>
             <div className="space-y-6 text-muted text-lg leading-relaxed">
               <p>
                 As educators and residents of Kanpur, we noticed a significant gap between traditional classroom 

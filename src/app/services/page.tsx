@@ -105,7 +105,7 @@ export default function Services() {
            <div className="absolute inset-0 bg-primary/5 -z-10" />
            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">Ready to transform your <br /><span className="text-primary italic">child's future?</span></h2>
            <p className="text-muted text-lg mb-12 max-w-2xl mx-auto">
-             Join thousands of parents in Kanpur who trust IQ Hometutions for their child's academic success.
+             Join thousands of parents in Kanpur who trust IQ Hometuitions for their child's academic success.
            </p>
            <div className="flex flex-col sm:flex-row justify-center gap-6">
               <Link 
