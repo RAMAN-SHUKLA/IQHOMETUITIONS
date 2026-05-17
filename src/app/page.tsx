@@ -213,7 +213,7 @@ export default function Home() {
                     <MapPin className="text-primary w-5 h-5" />
                   </div>
                   <p className="text-muted text-sm leading-relaxed">
-                    Main Office: Kidwai Nagar / Kakadeo, Kanpur, Uttar Pradesh 208011
+                    Main Office: Kidwai Nagar, Kanpur, Uttar Pradesh 208011
                   </p>
                 </div>
                 <div className="flex items-start space-x-4">

@@ -46,7 +46,7 @@ export default function FounderDesk() {
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-7xl font-bold text-white leading-tight"
           >
-            Empouring Minds <br />
+            Empowering Minds <br />
             <span className="text-primary italic glow-text">Across Kanpur</span>
           </motion.h1>
           <motion.p
