@@ -25,8 +25,89 @@ import Toppers from "@/components/Toppers";
 export default function Home() {
   const popularAreas = KANPUR_AREAS.filter(area => area.isPopular);
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "IQ Home Tuitions",
+    "image": "https://iqhometuitions.in/logo-transparent.png",
+    "url": "https://iqhometuitions.in",
+    "telephone": "+916387687518",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kidwai Nagar",
+      "addressLocality": "Kanpur",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "208011",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 26.4473887,
+      "longitude": 80.2541315
+    },
+    "areaServed": "Kanpur",
+    "priceRange": "$$"
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you provide tutors in all areas of Kanpur?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, tutors are available across major areas of Kanpur. We have a robust network of 500+ verified home tutors ready to serve you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which classes are covered?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tuition is available for all classes from primary (Class 1-5), middle school (Class 6-8), secondary classes (Class 9-10), to senior secondary (Class 11-12)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which subjects are covered?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We cover all major subjects including Mathematics, Science (Physics, Chemistry, Biology), English, Accounts, Economics, Business Studies, and Computer Science (Python/Java)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are online classes available?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, both online and offline tuition services are available. You can choose the format that best fits your convenience and your child's preferences."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide tutors for competitive exams?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we provide specialized home tutors for competitive exams such as JEE, NEET, CUET, NDA, and SSC coaching."
+        }
+      }
+    ]
+  };
+
   return (
     <div className="overflow-hidden">
+      {/* Schema Markups */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* Hero Section */}
       <section className="relative pt-40 pb-32 md:pt-56 md:pb-48 px-6 flex items-center justify-center min-h-[90vh]">
         {/* Background Image & Overlay */}
@@ -49,8 +130,8 @@ export default function Home() {
               <span>Verified Home Tutors in Kanpur</span>
             </span>
             <h1 className="text-5xl md:text-7xl font-serif font-bold mb-8 leading-[1.1] text-white tracking-wide">
-              Build Your Child's <br />
-              <span className="text-[#cba365] italic font-medium">Academic Success</span>
+              Best Home Tuition <br />
+              <span className="text-[#cba365] italic font-medium">Services in Kanpur</span>
             </h1>
             <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-light">
               Unlock personalized learning with Kanpur's most trusted home tuition platform. 
@@ -76,7 +157,6 @@ export default function Home() {
       </section>
 
       <Marquee />
-
 
       {/* Stats Section */}
       <section className="py-12 border-y border-white/5 bg-white/[0.02]">
@@ -105,7 +185,7 @@ export default function Home() {
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">Expert Tutors for <br /><span className="text-primary italic">Every Subject</span></h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">Expert Home Tutors for <br /><span className="text-primary italic">All Classes</span></h2>
               <p className="text-muted max-w-md">Whether it's school boards or competitive exams, we have the right expert for you.</p>
             </div>
             <Link href="/find-tutor" className="text-primary font-semibold flex items-center space-x-2 group">
@@ -147,7 +227,7 @@ export default function Home() {
       <section className="py-24 px-6 bg-white/[0.02]">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">How it Works</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Personalized One-to-One Tuition</h2>
             <p className="text-muted">Simple 3-step process to find your perfect tutor.</p>
           </div>
 
@@ -174,8 +254,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why Choose Section */}
+      <section className="py-24 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Why Choose IQ Home Tuitions</h2>
+            <p className="text-muted max-w-2xl mx-auto">Kanpur's preferred choice for personalized, high-impact education at home.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Tutors for CBSE, ICSE & State Boards",
+                desc: "We offer specialized home coaching for CBSE, ICSE, ISC, and UP Board students. Our tutors align with the school syllabus, prepare students for regular tests, and ensure maximum clarity for board exams.",
+                icon: BookOpen
+              },
+              {
+                title: "JEE, NEET & Competitive Exam Coaching",
+                desc: "Get competitive exam coaching at home. Our experienced tutors guide students through JEE, NEET, CUET, NDA, and Olympiads with custom preparation strategies, mock tests, and time management skills.",
+                icon: GraduationCap
+              },
+              {
+                title: "Online and Offline Tuition Available",
+                desc: "Choose between offline home visits and interactive online live classes. Both options provide personalized, one-to-one learning tailored to your child's schedule, pace, and individual academic goals.",
+                icon: CheckCircle2
+              }
+            ].map((item, i) => (
+              <div key={i} className="glass-card p-10 rounded-[2.5rem] border border-white/5 flex flex-col hover:border-primary/30 transition-all">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
+                  <item.icon className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
+                <p className="text-muted text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Areas Section */}
-      <section className="py-24 px-6" id="areas">
+      <section className="py-24 px-6 bg-white/[0.02]" id="areas">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Providing Tutors Across Kanpur</h2>
@@ -245,9 +362,49 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-24 px-6 bg-white/[0.02]" id="faqs">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
+            <p className="text-muted">Find answers to common questions about our home tuition services in Kanpur.</p>
+          </div>
+          <div className="space-y-6">
+            {[
+              {
+                q: "Do you provide tutors in all areas of Kanpur?",
+                a: "Yes, tutors are available across major areas of Kanpur. We have a robust network of 500+ verified home tutors ready to serve you."
+              },
+              {
+                q: "Which classes are covered?",
+                a: "Tuition is available for all classes from primary (Class 1-5), middle school (Class 6-8), secondary classes (Class 9-10), to senior secondary (Class 11-12)."
+              },
+              {
+                q: "Which subjects are covered?",
+                a: "We cover all major subjects including Mathematics, Science (Physics, Chemistry, Biology), English, Accounts, Economics, Business Studies, and Computer Science (Python/Java)."
+              },
+              {
+                q: "Are online classes available?",
+                a: "Yes, both online and offline tuition services are available. You can choose the format that best fits your convenience and your child's preferences."
+              },
+              {
+                q: "Do you provide tutors for competitive exams?",
+                a: "Yes, we provide specialized home tutors for competitive exams such as JEE, NEET, CUET, NDA, and SSC coaching."
+              }
+            ].map((faq, idx) => (
+              <div key={idx} className="glass-card p-8 rounded-2xl border border-white/5">
+                <h3 className="text-lg font-bold text-white mb-3 flex items-start gap-3">
+                  <span className="text-primary">Q:</span>
+                  <span>{faq.q}</span>
+                </h3>
+                <p className="text-muted text-sm leading-relaxed pl-6">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-
-
       <section className="py-24 px-6">
         <div className="container mx-auto max-w-5xl">
           <div className="primary-gradient p-12 md:p-20 rounded-[3rem] text-center relative overflow-hidden">

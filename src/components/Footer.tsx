@@ -26,7 +26,7 @@ export default function Footer() {
               <Link href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted hover:text-primary hover:bg-white/10 transition-all">
                 <Globe className="w-5 h-5" />
               </Link>
-              <Link href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted hover:text-primary hover:bg-white/10 transition-all">
+              <Link href={`tel:${SITE_CONFIG.contactNumbers[0].replace(/\s+/g, '')}`} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted hover:text-primary hover:bg-white/10 transition-all">
                 <Phone className="w-5 h-5" />
               </Link>
             </div>
@@ -65,13 +65,13 @@ export default function Footer() {
             <h4 className="text-white font-semibold">Get in Touch</h4>
             <div className="space-y-4">
               <Link
-                href={`https://wa.me/${SITE_CONFIG.whatsappNumber}`}
+                href={`tel:${SITE_CONFIG.contactNumbers[0].replace(/\s+/g, '')}`}
                 className="flex items-center space-x-3 text-sm text-muted hover:text-primary group"
               >
                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                  <MessageCircle className="w-4 h-4" />
+                  <Phone className="w-4 h-4" />
                 </div>
-                <span>{SITE_CONFIG.contactNumbers[0]}</span>
+                <span>Call: {SITE_CONFIG.contactNumbers[0]}</span>
               </Link>
               <div className="flex items-center space-x-3 text-sm text-muted">
                 <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">

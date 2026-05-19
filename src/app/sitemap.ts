@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { KANPUR_AREAS } from '@/data/areas'
 import { SUBJECTS } from '@/data/subjects'
+import { CLASS_LEVELS } from '@/data/classes'
 import { SITE_CONFIG } from '@/config/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -18,6 +19,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }))
 
+  const classRoutes = CLASS_LEVELS.map((classLevel) => ({
+    url: `${SITE_CONFIG.url}/classes/${classLevel.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }))
+
   return [
     {
       url: SITE_CONFIG.url,
@@ -30,6 +38,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: `${SITE_CONFIG.url}/online-tuition-in-kanpur`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_CONFIG.url}/private-tutors-in-kanpur`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_CONFIG.url}/one-to-one-tuition-in-kanpur`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
     },
     {
       url: `${SITE_CONFIG.url}/register-tutor`,
@@ -69,5 +95,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...areaRoutes,
     ...subjectRoutes,
+    ...classRoutes,
   ]
 }
