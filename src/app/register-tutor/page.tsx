@@ -4,14 +4,14 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { 
-  CheckCircle2, 
-  Send, 
-  User, 
-  Phone, 
-  MapPin, 
-  BookOpen, 
-  GraduationCap, 
+import {
+  CheckCircle2,
+  Send,
+  User,
+  Phone,
+  MapPin,
+  BookOpen,
+  GraduationCap,
   Briefcase,
   ChevronRight,
   ChevronLeft
@@ -102,7 +102,7 @@ export default function RegisterTutor() {
           <p className="text-muted mb-8">
             Thank you for registering. Our team will contact you on WhatsApp within 24-48 hours.
           </p>
-          <button 
+          <button
             onClick={() => window.location.href = "/"}
             className="w-full bg-primary text-white py-4 rounded-xl font-bold hover:scale-105 transition-all"
           >
@@ -125,11 +125,10 @@ export default function RegisterTutor() {
         <div className="flex justify-between mb-12 relative">
           <div className="absolute top-1/2 left-0 right-0 h-px bg-white/10 -z-10" />
           {[1, 2, 3].map((s) => (
-            <div 
-              key={s} 
-              className={`w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all ${
-                step >= s ? "bg-primary text-white scale-110 shadow-lg shadow-primary/20" : "bg-[#1A1A1A] text-muted border border-white/5"
-              }`}
+            <div
+              key={s}
+              className={`w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all ${step >= s ? "bg-primary text-white scale-110 shadow-lg shadow-primary/20" : "bg-[#1A1A1A] text-muted border border-white/5"
+                }`}
             >
               {s}
             </div>
@@ -143,13 +142,13 @@ export default function RegisterTutor() {
               <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
                 <User className="text-primary" /> Personal Details
               </h2>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-muted ml-4">Full Name</label>
                   <div className="custom-field">
                     <User className="w-5 h-5 text-muted" />
-                    <input 
+                    <input
                       {...register("fullName")}
                       className="custom-input"
                       placeholder="e.g. Rahul Sharma"
@@ -162,7 +161,7 @@ export default function RegisterTutor() {
                   <label className="text-sm font-medium text-muted ml-4">WhatsApp Number</label>
                   <div className="custom-field">
                     <Phone className="w-5 h-5 text-muted" />
-                    <input 
+                    <input
                       {...register("whatsapp")}
                       className="custom-input"
                       placeholder="10-digit number"
@@ -174,7 +173,7 @@ export default function RegisterTutor() {
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-muted ml-4">Gender</label>
                   <div className="custom-field">
-                    <select 
+                    <select
                       {...register("gender")}
                       className="custom-input appearance-none bg-transparent"
                     >
@@ -191,7 +190,7 @@ export default function RegisterTutor() {
                   <label className="text-sm font-medium text-muted ml-4">Residence Area</label>
                   <div className="custom-field">
                     <MapPin className="w-5 h-5 text-muted" />
-                    <select 
+                    <select
                       {...register("residenceArea")}
                       className="custom-input appearance-none bg-transparent"
                     >
@@ -205,8 +204,8 @@ export default function RegisterTutor() {
                 </div>
               </div>
 
-              <button 
-                type="button" 
+              <button
+                type="button"
                 onClick={handleStep1Next}
                 className="w-full bg-primary text-white py-4 rounded-xl font-bold flex items-center justify-center space-x-2 mt-8 hover:scale-105 transition-all shadow-lg shadow-primary/20"
               >
@@ -226,7 +225,7 @@ export default function RegisterTutor() {
               <div className="space-y-2">
                 <label className="text-sm font-medium text-muted ml-4">Teaching Experience</label>
                 <div className="custom-field">
-                  <select 
+                  <select
                     {...register("experience")}
                     className="custom-input appearance-none bg-transparent"
                   >
@@ -246,9 +245,9 @@ export default function RegisterTutor() {
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {["Maths", "Science", "Physics", "Chemistry", "Biology", "English", "Hindi", "Social Science", "Accountancy", "Computer"].map(sub => (
                     <label key={sub} className="flex items-center space-x-2 bg-white/5 p-3 rounded-2xl cursor-pointer hover:bg-white/10 transition-all border border-white/5">
-                      <input 
-                        type="checkbox" 
-                        value={sub} 
+                      <input
+                        type="checkbox"
+                        value={sub}
                         {...register("subjects")}
                         className="w-4 h-4 rounded border-white/10 text-primary focus:ring-primary bg-transparent"
                       />
@@ -260,16 +259,16 @@ export default function RegisterTutor() {
               </div>
 
               <div className="flex gap-4 mt-8">
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   onClick={prevStep}
                   className="flex-1 bg-[#252525] text-white py-4 rounded-xl font-bold flex items-center justify-center space-x-2 hover:bg-black transition-all"
                 >
                   <ChevronLeft className="w-5 h-5" />
                   <span>Back</span>
                 </button>
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   onClick={handleStep2Next}
                   className="flex-1 bg-primary text-white py-4 rounded-xl font-bold flex items-center justify-center space-x-2 hover:scale-105 transition-all shadow-lg"
                 >
@@ -291,7 +290,7 @@ export default function RegisterTutor() {
                 <label className="text-sm font-medium text-muted ml-4">Highest Qualification</label>
                 <div className="custom-field">
                   <GraduationCap className="w-5 h-5 text-muted" />
-                  <input 
+                  <input
                     {...register("qualification")}
                     className="custom-input"
                     placeholder="e.g. B.Tech (IIT Kanpur), M.Sc Physics"
@@ -302,7 +301,7 @@ export default function RegisterTutor() {
 
               <div className="space-y-2">
                 <label className="text-sm font-medium text-muted ml-4">Short Introduction</label>
-                <textarea 
+                <textarea
                   {...register("introduction")}
                   rows={4}
                   className="w-full bg-[#171717] border border-transparent focus:border-primary rounded-[25px] p-4 text-white shadow-[inset_2px_5px_10px_rgb(5,5,5)] outline-none transition-all text-sm"
@@ -316,9 +315,9 @@ export default function RegisterTutor() {
                 <div className="flex gap-4">
                   {["Home Visit", "Online", "Both"].map(mode => (
                     <label key={mode} className="flex-1 flex items-center justify-center space-x-2 bg-white/5 p-3 rounded-2xl cursor-pointer hover:bg-white/10 transition-all border border-white/5">
-                      <input 
-                        type="radio" 
-                        value={mode} 
+                      <input
+                        type="radio"
+                        value={mode}
                         {...register("teachingMode")}
                         className="text-primary focus:ring-primary bg-transparent"
                       />
@@ -331,8 +330,8 @@ export default function RegisterTutor() {
 
               <div className="pt-4">
                 <label className="flex items-start space-x-3 cursor-pointer group">
-                  <input 
-                    type="checkbox" 
+                  <input
+                    type="checkbox"
                     {...register("consent")}
                     className="mt-1 w-5 h-5 rounded border-white/10 text-primary focus:ring-primary bg-transparent"
                   />
@@ -344,16 +343,16 @@ export default function RegisterTutor() {
               </div>
 
               <div className="flex gap-4 mt-8">
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   onClick={prevStep}
                   className="flex-1 bg-[#252525] text-white py-4 rounded-xl font-bold flex items-center justify-center space-x-2 hover:bg-black transition-all"
                 >
                   <ChevronLeft className="w-5 h-5" />
                   <span>Back</span>
                 </button>
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   disabled={isSubmitting}
                   className="flex-1 bg-primary text-white py-4 rounded-xl font-bold flex items-center justify-center space-x-2 hover:scale-105 transition-all shadow-lg disabled:opacity-50"
                 >
