@@ -21,17 +21,21 @@ import LoadingAnimation from "@/components/LoadingAnimation";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Name is too short"),
-  whatsapp: z.string().regex(/^[6-9]\d{9}$/, "Invalid Indian mobile number"),
-  gender: z.enum(["Male", "Female", "Other"]),
+  whatsapp: z.string().regex(/^[6-9]\d{9}$/, "Invalid 10-digit Indian mobile number"),
+  gender: z.enum(["Male", "Female", "Other"], {
+    message: "Please select your gender"
+  }),
   residenceArea: z.string().min(1, "Please select your area"),
   experience: z.string().min(1, "Please select experience"),
   subjects: z.array(z.string()).min(1, "Select at least one subject"),
   classes: z.array(z.string()),
   boards: z.array(z.string()),
-  teachingMode: z.enum(["Home Visit", "Online", "Both"]),
+  teachingMode: z.enum(["Home Visit", "Online", "Both"], {
+    message: "Please select teaching mode"
+  }),
   qualification: z.string().min(2, "Please state your qualification"),
   introduction: z.string().min(50, "Intro must be at least 50 characters"),
-  consent: z.boolean().refine(val => val === true, "Consent is required"),
+  consent: z.boolean().refine(val => val === true, "You must agree to the terms"),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -41,7 +45,7 @@ export default function RegisterTutor() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const { register, handleSubmit, formState: { errors }, watch, setValue } = useForm<FormValues>({
+  const { register, handleSubmit, formState: { errors }, watch, setValue, trigger } = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       subjects: [],
@@ -64,7 +68,7 @@ export default function RegisterTutor() {
       if (result.success) {
         setIsSuccess(true);
       } else {
-        alert("Something went wrong. Please try again or contact us on WhatsApp.");
+        alert(result.error || "Something went wrong. Please try again or contact us on WhatsApp.");
       }
     } catch (error) {
       console.error("Submission error:", error);
@@ -76,6 +80,16 @@ export default function RegisterTutor() {
 
   const nextStep = () => setStep(s => s + 1);
   const prevStep = () => setStep(s => s - 1);
+
+  const handleStep1Next = async () => {
+    const isValid = await trigger(["fullName", "whatsapp", "gender", "residenceArea"]);
+    if (isValid) nextStep();
+  };
+
+  const handleStep2Next = async () => {
+    const isValid = await trigger(["experience", "subjects"]);
+    if (isValid) nextStep();
+  };
 
   if (isSuccess) {
     return (
@@ -170,6 +184,7 @@ export default function RegisterTutor() {
                       <option value="Other" className="bg-card">Other</option>
                     </select>
                   </div>
+                  {errors.gender && <p className="text-red-400 text-xs ml-4">{errors.gender.message}</p>}
                 </div>
 
                 <div className="space-y-2">
@@ -186,12 +201,13 @@ export default function RegisterTutor() {
                       ))}
                     </select>
                   </div>
+                  {errors.residenceArea && <p className="text-red-400 text-xs ml-4">{errors.residenceArea.message}</p>}
                 </div>
               </div>
 
               <button 
                 type="button" 
-                onClick={nextStep}
+                onClick={handleStep1Next}
                 className="w-full bg-primary text-white py-4 rounded-xl font-bold flex items-center justify-center space-x-2 mt-8 hover:scale-105 transition-all shadow-lg shadow-primary/20"
               >
                 <span>Continue</span>
@@ -222,6 +238,7 @@ export default function RegisterTutor() {
                     <option value="10+" className="bg-card">10+ Years</option>
                   </select>
                 </div>
+                {errors.experience && <p className="text-red-400 text-xs ml-4">{errors.experience.message}</p>}
               </div>
 
               <div className="space-y-4">
@@ -239,6 +256,7 @@ export default function RegisterTutor() {
                     </label>
                   ))}
                 </div>
+                {errors.subjects && <p className="text-red-400 text-xs ml-4">{errors.subjects.message}</p>}
               </div>
 
               <div className="flex gap-4 mt-8">
@@ -252,7 +270,7 @@ export default function RegisterTutor() {
                 </button>
                 <button 
                   type="button" 
-                  onClick={nextStep}
+                  onClick={handleStep2Next}
                   className="flex-1 bg-primary text-white py-4 rounded-xl font-bold flex items-center justify-center space-x-2 hover:scale-105 transition-all shadow-lg"
                 >
                   <span>Continue</span>
@@ -279,6 +297,7 @@ export default function RegisterTutor() {
                     placeholder="e.g. B.Tech (IIT Kanpur), M.Sc Physics"
                   />
                 </div>
+                {errors.qualification && <p className="text-red-400 text-xs ml-4">{errors.qualification.message}</p>}
               </div>
 
               <div className="space-y-2">
@@ -307,6 +326,7 @@ export default function RegisterTutor() {
                     </label>
                   ))}
                 </div>
+                {errors.teachingMode && <p className="text-red-400 text-xs ml-4">{errors.teachingMode.message}</p>}
               </div>
 
               <div className="pt-4">
@@ -320,6 +340,7 @@ export default function RegisterTutor() {
                     I agree to the terms and privacy policy.
                   </span>
                 </label>
+                {errors.consent && <p className="text-red-400 text-xs mt-2 ml-4">{errors.consent.message}</p>}
               </div>
 
               <div className="flex gap-4 mt-8">
