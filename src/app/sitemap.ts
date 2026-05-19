@@ -3,6 +3,8 @@ import { KANPUR_AREAS } from '@/data/areas'
 import { SUBJECTS } from '@/data/subjects'
 import { CLASS_LEVELS } from '@/data/classes'
 import { SITE_CONFIG } from '@/config/site'
+import fs from 'fs'
+import path from 'path'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const areaRoutes = KANPUR_AREAS.map((area) => ({
@@ -25,6 +27,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly' as const,
     priority: 0.85,
   }))
+
+  // Load blog routes dynamically
+  let blogRoutes: any[] = []
+  try {
+    const blogDir = path.join(process.cwd(), 'src/content/blog')
+    if (fs.existsSync(blogDir)) {
+      const files = fs.readdirSync(blogDir)
+      blogRoutes = files
+        .filter((file) => file.endsWith('.mdx'))
+        .map((file) => {
+          const slug = file.replace('.mdx', '')
+          return {
+            url: `${SITE_CONFIG.url}/blog/${slug}`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly' as const,
+            priority: 0.8,
+          }
+        })
+    }
+  } catch (error) {
+    console.error('Error adding blogs to sitemap:', error)
+  }
 
   return [
     {
@@ -96,5 +120,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...areaRoutes,
     ...subjectRoutes,
     ...classRoutes,
+    ...blogRoutes,
   ]
 }
