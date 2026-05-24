@@ -77,7 +77,7 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
                   <Mail className="w-4 h-4" />
                 </div>
-                <span>hometuitionsiq@gmail.com</span>
+                <span>hometutionsiq@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3 text-sm text-muted">
                 <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">

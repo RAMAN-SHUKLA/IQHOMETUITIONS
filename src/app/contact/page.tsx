@@ -36,9 +36,9 @@ export default function Contact() {
     {
       icon: Mail,
       label: "Email Us",
-      value: "hometuitionsiq@gmail.com",
+      value: "hometutionsiq@gmail.com",
       sub: "24/7 Support",
-      href: "mailto:hometuitionsiq@gmail.com"
+      href: "mailto:hometutionsiq@gmail.com"
     }
   ];
 

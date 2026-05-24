@@ -46,6 +46,6 @@ IQ Hometuitions is a premium, verified home tuition service based in Kanpur, Ind
 ## Contact & Office Details
 
 **Office:** Kidwai Nagar, Kanpur, Uttar Pradesh 208011, India  
-**Email:** [hometuitionsiq@gmail.com](mailto:hometuitionsiq@gmail.com)  
+**Email:** [hometutionsiq@gmail.com](mailto:hometutionsiq@gmail.com)  
 
 ![IQ Hometuitions Footer](docs/footer.png)
